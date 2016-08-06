@@ -1,29 +1,174 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto+Condensed';
+@import 'tools/mixins';
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
+
+
   .header {
     display: flex;
     padding: 5px;
     width: inherit;
+    justify-content: space-around;
+    background-color: #d3d3d3;
     img {
-
-    }
-    h1 {
-      font-size: 25px;
-      display: inherit;
-      align-items: center;
+      border: 1px solid black;
     }
     .navigation {
-      border: 2px solid purple;
       display: flex;
-      float: right;
+      width: 350px;
       ul {
-        border: 1px solid green;
         display: inherit;
         flex-direction: row;
         align-items: center;
+        width: 350px;
+        justify-content: space-around;
+        a {
+          text-decoration: none;
+          color: black;
+          font-size: 18px;
+          transition: color 0.5s;
+        }
+        a:hover {
+          color: green;
+        }
       }
+    }
+  }
+
+
+
+  .welcome {
+    h1, h2, p {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin-top: 150px;
+      font-size: 35px;
+    }
+    h2 {
+      font-size: 23px;
+    }
+    p {
+      color: white;
+    }
+    .small {
+      font-size: 13px;
+    }
+    .what_can_do {
+      margin: 0 auto;
+      margin-top: 80px;
+      width: 1060px;
+      left: 220px;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 50px;
+      h1, h2 {
+        text-align: left;
+      }
+      #images {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: 1060px;
+        flex-direction: row;
+        border: 1px solid green;
+        img {
+          max-width: 350px;
+          max-height: 200px;
+        }
+      }
+    }
+    .help {
+      width: 1060px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      margin-top: 100px;
+      padding-bottom: 100px;
+      ul {
+        margin-top: 25px;
+        li {
+          font-size: 20px;
+          padding: 3px;
+          a {
+            text-decoration: none;
+            color: purple;
+            font-weight: bold;
+          }
+        }
+        li:nth-child(odd) {
+          font-size: 25px;
+          font-weight: bold;
+          margin-top: 15px;
+        }
+      }
+    }
+    .contact {
+      h1 {
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 25px;
+      }
+      form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        input {
+          width: 500px;
+          height: 50px;
+          margin: 5px;
+          padding: 15px;
+          margin: 15px;
+        }
+        input:placeholder-shown {
+          font-size: 20px;
+        }
+        #name {
+          transition: box-shadow 0.5s;
+        }
+        #name:focus {
+          box-shadow: 0 0 3px 3px #7093ca;
+        }
+        #message {
+          height: 200px;
+          transition: box-shadow 0.5s;
+          padding: 25px;
+        }
+        #message:focus {
+          box-shadow: 0 0 3px 3px #7093ca;
+        }
+        #email {
+          transition: box-shadow 0.5s;
+        }
+        #email:focus {
+          box-shadow: 0 0 3px 3px #7093ca;
+        }
+        #submit {
+          @include ghost-button(green, 40px, 175px, 2px solid,  inline-block)
+          width: 200px;
+          height: 70px;
+          font-size: 25px;
+          font-weight: bold;
+          background-color: white;
+        }
+      }
+    }
+  }
+
+
+
+  #footer {
+    display: flex;
+    padding: 5px;
+    width: inherit;
+    justify-content: space-around;
+    background-color: #d3d3d3;
+    margin-top: 80px;
+    a {
+      text-decoration: none;
+      color: purple;
     }
   }
 }
